@@ -24,12 +24,9 @@ function positionLetters(string){
   // }
 
   for (var i = 0; i < letters.length; i++){
-
-
-
     if (letters[i].match(/[a-z]/i)){
 
-      if (output[letters[i]]){
+      if (output[letters[i]] !== undefined){
 
         output[letters[i]].push(i);
 
