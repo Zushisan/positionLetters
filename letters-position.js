@@ -1,27 +1,45 @@
 
-function countLetters(string){
+function positionLetters(string){
 
-  var letters = string.split(" ").join("").toLowerCase();
+  var letters = string.split(" ").join(" ").toLowerCase();
+
+  console.log(letters);
   var output = {};
 
 
-  for ( var letter of letters){
+  // for ( var letter of letters){
 
-    if (letter.match(/[a-z]/i)){
+  //   if (letter.match(/[a-z]/i)){
 
-      if (output[letter]){
+  //     if (output[letter]){
 
-        output[letter] += 1;
+  //       output[letter] += output[letter] + ", ";
 
+  //     }
+
+  //     else {
+  //       output[letter] = ;
+  //     }
+  //   }
+  // }
+
+  for ( var i = 0; i < letters.length; i++){
+
+    if (letters[i].match(/[a-z]/i)){
+
+      if (output[letters[i]]){
+
+        output[letters[i]] += ", " + i;
       }
-
       else {
-        output[letter] = 1;
+
+        output[letters[i]] = i;
       }
     }
   }
 
 return output;
+
 }
 
-console.log(countLetters("My name is Romain."));
+console.log(positionLetters("My name is Romain."));
